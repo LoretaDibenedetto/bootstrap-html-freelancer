@@ -188,7 +188,7 @@
                  
 
                       <div class="col-sm-6">
-                          <form action="#">
+                          <div >
 
                               <label for="first-name"  class="form-label">First name</label>
                               <input type="text" id="first-name" class="form-control mb-3" placeholder="Enter your first name..." aria-label="First name">
@@ -196,15 +196,15 @@
                               <label for="email"  class="form-label"> Email address </label>
                               <input type="email" id="email" class="form-control mb-3" placeholder="name@example.com" aria-label="email">
                               
-                              <label for="text-1"  class="form-label"> Type of work </label>
+                              <label for="work-type"  class="form-label"> Type of work </label>
                             
-                              <select class="form-select" id="text-1" aria-label="type of work">
+                              <select class="form-select" id="work-type" aria-label="type of work">
                                 <option selected>Type of work</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="backend">sviluppo backend</option>
+                                <option value="frontend"> sviluppo frontend</option>
+                                <option value="analize project">analisi progettuale di un progetto</option>
                               </select>
-                            </form>
+                            </div>
                       </div>
 
                       <div class="col-sm-6">
@@ -227,8 +227,8 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                         
                                     </div>
-                                    <button type="submit" id="button" class="text-center btn-dark" >send</button>
-                                    
+                                    <button type="submit" id="button" class=" btn-dark" >send</button>
+                                    <p id="finalPrice"></p>
                                 </div>
                         </div>
                   </div>
