@@ -34,7 +34,7 @@ function validateForm(event){
     if(isNaN(inputHours) || inputHours == ""){
        document.getElementById("hourvalidate").innerHTML= "Insert a Number";
        document.getElementById("hourvalidate").classList.add("text-danger");
-       inputHours.classList.add('border-danger');
+       document.getElementById("hours").classList.add("border-danger");
     }
 
     // Qui sono sicuro che la mia stringa conterrà un numero
