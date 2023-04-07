@@ -30,8 +30,44 @@ function validateForm(event){
         
     };
 
-    document.getElementById("finalPrice").innerHTML = Price.toFixed(2);
+    document.getElementById("finalPrice").innerHTML =`${ Price.toFixed(2)}€`;
+
+    //codice sconto
+    let discountCodeUser = document.getElementById("discountRequested").value;
+    let isDiscountCodeAvailable = disocuntCodes.includes(discountCodeUser);
+
+    
+    if(isDiscountCodeAvailable){
+        Price = Price - Price * 0.25;
+        discountCodes = removeElementFromArray(disocuntCodes, discountCodeUser);
+
+        console.log(discountCodes);
+
+        document.getElementById("result-applied-discount").innerHTML = "Il codice sconto è stato corettamente applicato!";
+    } else if (discountCodeUser != "") {
+        document.getElementById("result-applied-discount").innerHTML = "Il codice sconto non è valido!";
+    } else {
+        document.getElementById("result-applied-discount").innerHTML = "";
+    };
+
+
+    document.getElementById("finalPrice").innerHTML =`${ Price.toFixed(2)}€ h`;
+
+};
 
 
 
-}
+
+
+
+
+// ------------------- FUNZIONI GENERICHE --------------------
+function removeElementFromArray(array, elementToRemove){
+
+    const index = array.indexOf(elementToRemove);
+
+    array.splice(index, 1);
+
+    return array;
+
+};
