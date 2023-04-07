@@ -29,18 +29,34 @@ function validateForm(event){
             break;
         
     };
+    
+    let inputHours = document.getElementById("hours").value;
+    if(isNaN(inputHours) || inputHours == ""){
+       document.getElementById("hourvalidate").innerHTML= "inserisci un numero";
+       document.getElementById("hourvalidate").classList.add("text-danger");
+       inputHours.classList.add('border-danger');
+    }
 
-    document.getElementById("finalPrice").innerHTML =`${ Price.toFixed(2)}€`;
+    // Qui sono sicuro che la mia stringa conterrà un numero
+    let numhours = parseFloat(inputHours);
+     
+    let PriceForHours =  Price * numhours;
+
+
+   // document.getElementById("finalPrice").innerHTML =`${ PriceForHours.toFixed(2)}€`;
 
     //codice sconto
     let discountCodeUser = document.getElementById("discountRequested").value;
     let isDiscountCodeAvailable = disocuntCodes.includes(discountCodeUser);
 
     let validateCoupon = document.getElementById("result-applied-discount");
+    
     let validateInput = document.getElementById("discountRequested");
+
+
     if(isDiscountCodeAvailable){
 
-        Price = Price - Price * 0.25;
+        PriceForHours = PriceForHours - PriceForHours * 0.25;
 
         discountCodes = removeElementFromArray(disocuntCodes, discountCodeUser);
 
@@ -60,8 +76,8 @@ function validateForm(event){
        validateCoupon.innerHTML = "";
     };
 
-
-    document.getElementById("finalPrice").innerHTML =`${ Price.toFixed(2)}€ h`;
+   document.getElementById("finalPrice").innerHTML =`${ PriceForHours.toFixed(2)}€`;
+   // document.getElementById("finalPrice").innerHTML =`${ Price.toFixed(2)}€ h`;
 
 };
 
@@ -81,3 +97,4 @@ function removeElementFromArray(array, elementToRemove){
     return array;
 
 };
+
