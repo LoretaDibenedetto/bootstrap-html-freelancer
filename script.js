@@ -36,18 +36,26 @@ function validateForm(event){
     let discountCodeUser = document.getElementById("discountRequested").value;
     let isDiscountCodeAvailable = disocuntCodes.includes(discountCodeUser);
 
-    
+    let validateCoupon = document.getElementById("result-applied-discount");
+
     if(isDiscountCodeAvailable){
+
         Price = Price - Price * 0.25;
+
         discountCodes = removeElementFromArray(disocuntCodes, discountCodeUser);
 
         console.log(discountCodes);
 
-        document.getElementById("result-applied-discount").innerHTML = "Il codice sconto è stato corettamente applicato!";
+       validateCoupon.innerHTML = 'il codice sconto è stato applicato correttamente';
+       validateCoupon.classList.add('text-success');
+
     } else if (discountCodeUser != "") {
-        document.getElementById("result-applied-discount").innerHTML = "Il codice sconto non è valido!";
+
+       validateCoupon.innerHTML = "Il codice sconto non è valido!";
+       validateCoupon.classList.add('text-danger');
+        
     } else {
-        document.getElementById("result-applied-discount").innerHTML = "";
+       validateCoupon.innerHTML = "";
     };
 
 
