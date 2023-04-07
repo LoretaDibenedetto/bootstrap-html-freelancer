@@ -32,7 +32,7 @@ function validateForm(event){
     
     let inputHours = document.getElementById("hours").value;
     if(isNaN(inputHours) || inputHours == ""){
-       document.getElementById("hourvalidate").innerHTML= "inserisci un numero";
+       document.getElementById("hourvalidate").innerHTML= "Insert a Number";
        document.getElementById("hourvalidate").classList.add("text-danger");
        inputHours.classList.add('border-danger');
     }
@@ -62,13 +62,13 @@ function validateForm(event){
 
         console.log(discountCodes);
        
-       validateCoupon.innerHTML = 'il codice sconto è stato applicato correttamente';
+       validateCoupon.innerHTML = 'Discount Code has been applied';
        validateCoupon.classList.add('text-success');
        validateInput.classList.add('border-success');
 
     } else if (discountCodeUser != "") {
 
-       validateCoupon.innerHTML = "Il codice sconto non è valido!";
+       validateCoupon.innerHTML = "Discount Code isn't valid";
        validateCoupon.classList.add('text-danger');
        validateInput.classList.add('border-danger');
         

@@ -173,7 +173,7 @@
 
 
     <!--=========FORM==========================-->
-    <form class="bg-info" onsubmit="validateForm(event)">
+    <form class="bg-primary-subtle" onsubmit="validateForm(event)">
            <div class="container-xxl ">
                     <div class="row">
                         <div class="col-12">
@@ -200,9 +200,9 @@
                             
                               <select class="form-select" id="work-type" aria-label="type of work">
                                 <option selected>Type of work</option>
-                                <option value="backend">sviluppo backend</option>
-                                <option value="frontend"> sviluppo frontend</option>
-                                <option value="analize project">analisi progettuale di un progetto</option>
+                                <option value="backend">Backend Development</option>
+                                <option value="frontend"> Frontend Development</option>
+                                <option value="analize project">Project Analysis</option>
                               </select>
                             </div>
                       </div>
@@ -228,8 +228,11 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                         
                                     </div>
-                                    <button type="submit" id="button" class="btn btn-dark" >send</button>
-                                    <h3 class="text-center" id="finalPrice"></h3>
+                                     <button type="submit" id="button" class="btn btn-dark" >send</button>
+                                     <div class="text-center mb-3">
+                                    <h2>Total Price:</h3>
+                                    <h3 id="finalPrice"></h3>
+                                     </div>
                                 </div>
                         </div>
                   </div>
