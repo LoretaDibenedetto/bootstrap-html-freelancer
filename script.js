@@ -37,7 +37,7 @@ function validateForm(event){
     let isDiscountCodeAvailable = disocuntCodes.includes(discountCodeUser);
 
     let validateCoupon = document.getElementById("result-applied-discount");
-
+    let validateInput = document.getElementById("discountRequested");
     if(isDiscountCodeAvailable){
 
         Price = Price - Price * 0.25;
@@ -45,14 +45,16 @@ function validateForm(event){
         discountCodes = removeElementFromArray(disocuntCodes, discountCodeUser);
 
         console.log(discountCodes);
-
+       
        validateCoupon.innerHTML = 'il codice sconto è stato applicato correttamente';
        validateCoupon.classList.add('text-success');
+       validateInput.classList.add('border-success');
 
     } else if (discountCodeUser != "") {
 
        validateCoupon.innerHTML = "Il codice sconto non è valido!";
        validateCoupon.classList.add('text-danger');
+       validateInput.classList.add('border-danger');
         
     } else {
        validateCoupon.innerHTML = "";
